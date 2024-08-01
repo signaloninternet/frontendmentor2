@@ -1,0 +1,147 @@
+body {
+    background-image: url('images/bg-desktop.svg');
+    background-color: #673ab7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.head {
+    text-align: left;
+    padding: 1rem;
+}
+
+.bodypart {
+    display: grid;
+    grid-template-areas: 
+        "title title description"
+        "title title description";
+    gap: 1rem;
+    flex: 1; 
+}
+
+.mainimage img {
+    grid-area: title;
+    width: 50vw;
+    height: auto;
+}
+
+.buildup {
+    grid-area: description;
+    text-align: left;
+    max-width: 600px;
+}
+
+.buildup h3 {
+    font-size: 6vh;
+    margin: 0.5em 0;
+    color: white;
+}
+
+.buildup p {
+    margin: 1em 0;
+    color: white;
+}
+
+.buildup button {
+    background-color: white; 
+    color: #673ab7;
+    border: none;
+    border-radius: 2vw;
+    padding: 13px 35px;
+    font-size: 1rem; 
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.buildup button:hover {
+    background-color: #f178a1;
+    color: white;
+}
+
+i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    height: 24px; 
+    width: 24px;
+    font-size: 16px; 
+}
+
+.foot {
+    grid-area: footer;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 1vw;
+}
+
+i:hover {
+    border-color: #f178a1;
+    color: #f178a1;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .bodypart {
+        grid-template-areas: 
+            "title"
+            "description"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .mainimage img {
+        width: 90vw; 
+    }
+
+    .buildup h3 {
+        font-size: 4vh; 
+    }
+
+    .buildup p {
+        font-size: 1rem;
+    }
+
+    .buildup button {
+        padding: 10px 25px; 
+        font-size: 0.9rem; 
+    }
+
+    .foot {
+        justify-content: center; 
+        gap: 1rem; 
+    }
+
+    i {
+        height: 20px; 
+        width: 20px;
+        font-size: 14px; 
+    }
+}
